@@ -31,7 +31,10 @@ class Mode(Enum):
     JSON = 1
 
 @dataclass
-class Host:
+class Session:
+    """
+    会话类
+    """
     hostname: str = "localhost"
     user: str = "root"
     port: int = 22
@@ -62,7 +65,7 @@ SELECTED_HOST = list()
 MODE=Mode.PLAIN
 
 @click.group()
-def cli(inventory, debug, username, password, port):
+def cli(inventory, level, mode, config):
     pass
 
 @cli.group()
